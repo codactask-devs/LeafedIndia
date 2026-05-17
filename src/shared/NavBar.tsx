@@ -21,7 +21,7 @@ const NavBar = ({ setFormOpen }: NavBarProps) => {
 
     return (
         <header className="w-full relative">
-            <div className="fixed top-0 left-0 w-full z-[99999] transition-all duration-300 opacity-100">
+            <div className="fixed top-0 left-0 w-full z-80 transition-all duration-300 opacity-100">
                 <nav className="bg-white/70 backdrop-blur-md border-b border-[#f2f2f2] md:border-none h-[70px] md:h-[90px] px-4 md:px-10 flex items-center justify-between">
                     <div className="">
                         <Link to="/" onClick={() => setIsProductsOpen(false)}>
