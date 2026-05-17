@@ -27,7 +27,7 @@ const TrustedBrands = () => {
     return (
         <section className="w-full bg-[#f6f3e5]">
 
-        <div className="w-full relative flex flex-col lg:flex-row items-center py-16">
+            <div className="w-full relative flex flex-col lg:flex-row items-center pt-16">
 
                 <div className="w-full lg:w-3/5 px-6 lg:pl-20 lg:pr-10">
                     <h2
@@ -67,7 +67,7 @@ const TrustedBrands = () => {
                         className="w-[300px] md:w-[420px] lg:w-[520px] h-auto object-contain"
                     />
                 </div>
-        </div>
+            </div>
 
             <div className="w-full pb-14 overflow-hidden bg-[#f6f3e5]">
                 <p

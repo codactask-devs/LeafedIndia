@@ -1,20 +1,21 @@
+import type { FC } from 'react';
 import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
     {
-        name: "Aghnia Niaa",
+        name: "Aghnia niaa",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-        avatar: "https://xsgames.co/randomusers/assets/avatars/female/1.jpg"
+        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
     },
     {
-        name: "Chiara Shinta",
+        name: "Chiara shinta",
         text: "Sustainability is at the heart of everything they do. The packaging is premium and eco-friendly.",
-        avatar: "https://xsgames.co/randomusers/assets/avatars/female/2.jpg"
+        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
     },
     {
         name: "Nandha Nabil",
         text: "Great quality paper products. Our customers love the new burger boxes and cups!",
-        avatar: "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
     },
     {
         name: "Sarah Parker",
@@ -28,7 +29,7 @@ const testimonials = [
     },
     {
         name: "Emily Watson",
-        text: "I love the values of LeafedIndia. Their products are both beautiful and good for the earth.",
+        text: "I love the values of Leafedindia. Their products are both beautiful and good for the earth.",
         avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop"
     },
     {
@@ -53,37 +54,37 @@ const testimonials = [
     }
 ];
 
-const Testimonials = () => {
+const Testimonials: FC = () => {
     const scrollItems = [...testimonials, ...testimonials];
 
     return (
-        <section className="w-full pt-10 pb-20 overflow-hidden px-4 md:px-10">
-            <div className="mx-auto bg-[#0d6e41] rounded-[40px] md:rounded-[60px] py-16 md:py-24 relative overflow-hidden">
+        <section className="w-full   overflow-hidden bg-white">
+            <div className=" mx-auto bg-[#0d6e41]  py-16 md:py-24 relative overflow-hidden">
 
                 <div className="text-center mb-16 px-4">
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight max-w-2xl mx-auto tracking-tighter"
+                        className="text-white text-[32px] md:text-[54px] lg:text-[60px] font-black leading-tight max-w-2xl mx-auto tracking-tighter"
                     >
                         Satisfied Customers <br className="hidden md:block" /> Are Our Best Ads
                     </h2>
                 </div>
 
                 <div className="relative flex overflow-hidden group">
-                    <div
-                        className="flex gap-8 animate-scroll hover:[animation-play-state:paused] whitespace-nowrap"
-                        style={{ willChange: 'transform' }}
-                    >
+                    <div className="flex gap-8 animate-scroll hover:[animation-play-state:paused] whitespace-nowrap" style={{ willChange: 'transform' }}>
                         {scrollItems.map((item, index) => (
                             <div
                                 key={index}
                                 className="inline-block w-[300px] md:w-[350px] relative"
                             >
-                                <div className="bg-[#fff9e6] rounded-[32px] p-8 pb-12 pt-12 shadow-xl flex flex-col items-center text-center relative">
+                                <div className="bg-[#fffdec] rounded-[32px] p-8 pb-12 pt-12 shadow-xl flex flex-col items-center text-center relative whitespace-normal">
                                     <div className="flex justify-center mb-4 text-[#fb923c]">
                                         <Quote size={32} fill="currentColor" className="rotate-180" />
                                     </div>
-                                    <p className="text-gray-600 text-sm md:text-base leading-relaxed whitespace-normal font-medium mb-6 line-clamp-3">
+                                    <p
+                                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                                        className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed font-medium mb-6 line-clamp-3"
+                                    >
                                         "{item.text}"
                                     </p>
                                     <div className="flex gap-1 mb-8">
@@ -91,8 +92,9 @@ const Testimonials = () => {
                                             <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
                                         ))}
                                     </div>
+
                                     <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
-                                        <div className="w-16 h-16 rounded-full border-4 border-[#fff9e6] overflow-hidden bg-white shadow-lg">
+                                        <div className="w-16 h-16 rounded-full border-4 border-[#fffdec] overflow-hidden bg-white shadow-lg">
                                             <img
                                                 src={item.avatar}
                                                 alt={item.name}
@@ -105,7 +107,10 @@ const Testimonials = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-12 text-center text-white font-bold text-lg opacity-90">
+                                <div
+                                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                                    className="mt-12 text-center text-white font-bold text-lg opacity-90"
+                                >
                                     {item.name}
                                 </div>
                             </div>

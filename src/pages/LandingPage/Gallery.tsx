@@ -41,7 +41,6 @@ const categoriesConfig = [
 const items = categoriesConfig.flatMap(cat => {
     const selection = cat.images.length > 0 ? cat.images.slice(0, 4) : [cat.defaultImg];
 
-    // Map category names to actual product IDs in productData.tsx
     let productId = "";
     const name = cat.name.toLowerCase();
     if (name.includes('cup')) productId = 'paper-cups';
@@ -49,8 +48,8 @@ const items = categoriesConfig.flatMap(cat => {
     else if (name.includes('burger')) productId = 'burger-box';
     else if (name.includes('food box')) productId = 'food-box';
     else if (name.includes('tray')) productId = 'paper-tray';
-    else if (name.includes('noodles')) productId = 'hexagon-box'; // Using hexagon as proxy if noodles page missing
-    else productId = 'products'; // Fallback to all products
+    else if (name.includes('noodles')) productId = 'hexagon-box';
+    else productId = 'products';
 
     return selection.map(img => ({
         image: img,

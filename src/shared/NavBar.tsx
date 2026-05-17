@@ -1,23 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import { Menu, ChevronDown, X } from 'lucide-react';
 
-// NavBar Icons
 import bowlIcon from '../assets/NavBar/bowl.webp';
 import burgerBoxIcon from '../assets/NavBar/burger-box.webp';
 import foodBoxIcon from '../assets/NavBar/food-box.webp';
 import hexagonBoxIcon from '../assets/NavBar/hexagon-box.webp';
 import paperCupIcon from '../assets/NavBar/paper-cup.webp';
 import pizzaBoxIcon from '../assets/NavBar/pizza-box.webp';
-const NavBar = () => {
+
+interface NavBarProps {
+    setFormOpen?: (open: boolean) => void;
+}
+
+const NavBar = ({ setFormOpen }: NavBarProps) => {
     const [isProductsOpen, setIsProductsOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
 
     return (
         <header className="w-full relative z-100">
-            {/* navbar */}
             <div className="fixed top-0 left-0 w-full z-50 transition-all duration-300 opacity-100">
                 <nav className="bg-white/70 backdrop-blur-md border-b border-[#f2f2f2] md:border-none h-[70px] md:h-[90px] px-4 md:px-10 flex items-center justify-between">
                     <div className="">
@@ -107,9 +110,52 @@ const NavBar = () => {
                                         </div>
                                     </div>
 
-                                    <div className="w-[300px] p-6 flex justify-center items-center">
-                                        <div style={{ width: 208, height: 208 }} className="bg-gray-50 rounded-2xl flex items-center justify-center border border-gray-100">
-                                            <span className="text-gray-400 text-sm font-medium">Product Preview</span>
+                                    <div className="w-[340px] p-6 flex shrink-0">
+                                        <div className="bg-[#1a2b4b] rounded-[28px] p-6 w-full flex flex-col justify-between shadow-lg relative overflow-hidden">
+                                            <div>
+                                                <h3 style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-[#86bc25] text-[18px] font-black leading-snug mb-3">
+                                                    Need Help Finding the<br />Right Packaging?
+                                                </h3>
+                                                <p style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-white text-[12px] leading-relaxed font-semibold opacity-95 mb-5">
+                                                    Not sure which food packaging best suits your brand or product? Speak to our friendly team for a free, <span className="underline decoration-2 decoration-[#86bc25] underline-offset-2">no-obligation consultation.</span>
+                                                </p>
+                                            </div>
+
+                                            <div>
+                                                <div className="flex -space-x-3 mb-5 pl-1">
+                                                    <img 
+                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover" 
+                                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" 
+                                                        alt="Team member 1" 
+                                                    />
+                                                    <img 
+                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover" 
+                                                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" 
+                                                        alt="Team member 2" 
+                                                    />
+                                                    <img 
+                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover" 
+                                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" 
+                                                        alt="Team member 3" 
+                                                    />
+                                                </div>
+
+                                                <button 
+                                                    onClick={() => {
+                                                        setIsProductsOpen(false);
+                                                        if (setFormOpen) {
+                                                            setFormOpen(true);
+                                                        } else {
+                                                            const element = document.getElementById('contact');
+                                                            if (element) element.scrollIntoView({ behavior: 'smooth' });
+                                                        }
+                                                    }}
+                                                    style={{ fontFamily: "'Montserrat', sans-serif" }}
+                                                    className="w-full bg-white hover:bg-[#86bc25] text-[#1a2b4b] hover:text-white font-extrabold text-[13px] py-3 px-5 rounded-full border border-gray-100 hover:border-[#86bc25] shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 group/btn"
+                                                >
+                                                    Get Free Quote <span className="text-[#86bc25] group-hover/btn:text-white transition-colors duration-300 font-bold">›</span>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -156,21 +202,17 @@ const NavBar = () => {
                 </nav>
             </div>
 
-            {/* Mobile Menu Overlay */}
             <div
                 className={`fixed inset-0 z-[100] lg:hidden transition-all duration-500 ${isMobileMenuOpen ? 'visible' : 'invisible'}`}
             >
-                {/* Backdrop */}
                 <div
                     className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-500 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                 />
 
-                {/* Sidebar */}
                 <div
                     className={`absolute top-0 right-0 bottom-0 w-full sm:w-[400px] bg-white shadow-2xl transition-transform duration-500 ease-out flex flex-col ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                 >
-                    {/* Mobile Header */}
                     <div className="p-6 flex items-center justify-between border-b-2 border-gray-100">
                         <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
                             <img src={logo} alt="LeafedIndia Logo" className="h-10 w-auto" />
@@ -183,7 +225,6 @@ const NavBar = () => {
                         </button>
                     </div>
 
-                    {/* Navigation Links */}
                     <div className="flex-1 overflow-y-auto w-full">
                         <Link
                             to="/"
@@ -193,7 +234,6 @@ const NavBar = () => {
                             Home
                         </Link>
 
-                        {/* Mobile Products Accordion */}
                         <div className="border-b border-gray-100">
                             <button
                                 onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
@@ -262,7 +302,6 @@ const NavBar = () => {
                             Contact
                         </Link>
 
-
                     </div>
                 </div>
 
@@ -272,4 +311,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
