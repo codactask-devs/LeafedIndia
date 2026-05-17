@@ -20,8 +20,8 @@ const NavBar = ({ setFormOpen }: NavBarProps) => {
     const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
 
     return (
-        <header className="w-full relative z-100">
-            <div className="fixed top-0 left-0 w-full z-50 transition-all duration-300 opacity-100">
+        <header className="w-full relative">
+            <div className="fixed top-0 left-0 w-full z-[99999] transition-all duration-300 opacity-100">
                 <nav className="bg-white/70 backdrop-blur-md border-b border-[#f2f2f2] md:border-none h-[70px] md:h-[90px] px-4 md:px-10 flex items-center justify-between">
                     <div className="">
                         <Link to="/" onClick={() => setIsProductsOpen(false)}>
@@ -123,24 +123,24 @@ const NavBar = ({ setFormOpen }: NavBarProps) => {
 
                                             <div>
                                                 <div className="flex -space-x-3 mb-5 pl-1">
-                                                    <img 
-                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover" 
-                                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" 
-                                                        alt="Team member 1" 
+                                                    <img
+                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover"
+                                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                                                        alt="Team member 1"
                                                     />
-                                                    <img 
-                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover" 
-                                                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" 
-                                                        alt="Team member 2" 
+                                                    <img
+                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover"
+                                                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                                                        alt="Team member 2"
                                                     />
-                                                    <img 
-                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover" 
-                                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" 
-                                                        alt="Team member 3" 
+                                                    <img
+                                                        className="inline-block h-10 w-10 rounded-full ring-2 ring-[#1a2b4b] object-cover"
+                                                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                                                        alt="Team member 3"
                                                     />
                                                 </div>
 
-                                                <button 
+                                                <button
                                                     onClick={() => {
                                                         setIsProductsOpen(false);
                                                         if (setFormOpen) {
@@ -203,7 +203,7 @@ const NavBar = ({ setFormOpen }: NavBarProps) => {
             </div>
 
             <div
-                className={`fixed inset-0 z-[100] lg:hidden transition-all duration-500 ${isMobileMenuOpen ? 'visible' : 'invisible'}`}
+                className={`fixed inset-0 z-[100000] lg:hidden transition-all duration-500 ${isMobileMenuOpen ? 'visible' : 'invisible'}`}
             >
                 <div
                     className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-500 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}

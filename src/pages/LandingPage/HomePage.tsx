@@ -41,6 +41,7 @@ const HomePage = () => {
                 @keyframes scaleIn { from { transform:scale(0.88);opacity:0 } to { transform:scale(1);opacity:1 } }
             `}</style>
             <div className="w-full min-h-screen relative">
+                <NavBar setFormOpen={setFormOpen} />
 
                 <section className="absolute inset-0 z-0 pointer-events-none">
                     <div className="bg-[#0d6e41] w-full" />
@@ -51,7 +52,6 @@ const HomePage = () => {
                 </section>
 
                 <section className="relative z-10">
-                    <NavBar setFormOpen={setFormOpen} />
                     <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-[133px] md:pt-[190px] lg:pt-[171px] pb-[5%]">
                         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-0">
 
