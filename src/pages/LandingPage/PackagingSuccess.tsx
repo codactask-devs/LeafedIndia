@@ -24,7 +24,7 @@ const PackagingSuccess = () => {
         <section className="w-full bg-[#f6f3e5] py-20 px-4 md:px-10 overflow-hidden">
             <div className="max-w-7xl mx-auto flex flex-col">
 
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
@@ -46,7 +46,7 @@ const PackagingSuccess = () => {
                     </p>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -131,7 +131,7 @@ const PackagingSuccess = () => {
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}
                                 className="text-[#1a2b4b] font-black text-[17px] tracking-wide block"
                             >
-                                Dick
+                                Prithvi Raj
                             </span>
                             <div className="flex items-center gap-1.5 mt-1 text-[#1a2b4b]/80 font-bold text-[14px]">
                                 <Quote size={12} fill="currentColor" className="rotate-180 shrink-0" />
