@@ -50,7 +50,7 @@ const BrandFreshLook = ({ setFormOpen }: BrandFreshLookProps) => {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.8 }}
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    className="text-[34px] sm:text-[44px] md:text-[54px] lg:text-[60px] font-black leading-tight text-[#1a2b4b] mb-8 tracking-tight"
+                    className="text-[32px] md:text-[48px] lg:text-[58px] font-black leading-[1.1] text-[#1a2b4b] mb-8 tracking-tight"
                 >
                     Give Your Food Brand a{" "}
                     <span className="text-[#a21c1c] relative inline-block whitespace-nowrap">

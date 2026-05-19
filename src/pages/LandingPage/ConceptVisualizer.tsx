@@ -18,7 +18,7 @@ const ConceptVisualizer = () => {
                 >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-[32px] md:text-[40px] lg:text-[44px] font-black leading-tight text-[#0d6e41] mb-6"
+                        className="text-[32px] md:text-[48px] lg:text-[58px] font-black leading-[1.1] text-[#0d6e41] mb-6"
                     >
                         Visualize Your Custom<br className="hidden md:block" /><span className='text-[#fb923c]'> Packaging Idea Instantly</span>
                     </h2>

@@ -87,7 +87,7 @@ const Gallery: React.FC = () => {
 
     return (
         <div id="collections" ref={containerRef} className="w-full mx-auto bg-[#f6f3e5] pb-20 pt-10">
-            <h2 style={{ fontFamily: "'Montserrat', sans-serif" }} className='text-[35px] md:text-[50px] lg:text-[65px] leading-none text-center font-black mb-16 uppercase tracking-tight'>
+            <h2 style={{ fontFamily: "'Montserrat', sans-serif" }} className='text-[32px] md:text-[48px] lg:text-[58px] leading-[1.1] text-center font-black mb-16 tracking-tight'>
                 <span className="text-[#0d6e41]">Our </span>
                 <span className="text-[#fb923c]">Eco</span>
                 <span className="text-[#0d6e41]"> Collections</span>

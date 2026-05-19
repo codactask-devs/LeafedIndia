@@ -37,7 +37,7 @@ const TrustedBrands = () => {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.8 }}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-[36px] md:text-[48px] lg:text-[56px] font-black text-[#0d6e41] leading-tight mb-6"
+                        className="text-[32px] md:text-[48px] lg:text-[58px] font-black text-[#0d6e41] leading-[1.1] mb-6"
                     >
                         Trusted by Brands<br />
                         Who <span className="text-[#fb923c]">Love the Planet</span>
