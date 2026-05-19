@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import brandsImg from '../../assets/brands.png';
 import globeImg from '../../assets/globe.png';
 import logo1 from '../../assets/CompanyLogos/logo1.webp';
@@ -25,51 +26,67 @@ const logos = [
 
 const TrustedBrands = () => {
     return (
-        <section className="w-full bg-[#f6f3e5]">
+        <section className="w-full bg-[#f6f3e5] overflow-hidden">
 
             <div className="w-full relative flex flex-col lg:flex-row items-center pt-16">
 
                 <div className="w-full lg:w-3/5 px-6 lg:pl-20 lg:pr-10">
-                    <h2
+                    <motion.h2
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8 }}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                         className="text-[36px] md:text-[48px] lg:text-[56px] font-black text-[#0d6e41] leading-tight mb-6"
                     >
                         Trusted by Brands<br />
                         Who <span className="text-[#fb923c]">Love the Planet</span>
-                    </h2>
+                    </motion.h2>
 
-                    <img
+                    <motion.img
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
                         src={brandsImg}
                         alt="Trusted brand logos"
                         className="w-full max-w-[580px] h-auto mb-8 object-contain"
                     />
 
-                    <p
+                    <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                         className="text-gray-500 text-[16px] md:text-[17px] leading-relaxed max-w-[520px] mb-10"
                     >
                         Dedicated to preserving the environment, our sustainable food packaging solutions not only protect your products but also the planet. Learn more about our eco-friendly practices.
-                    </p>
-
-                    <a
-                        href="#contact"
-                        style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="group inline-flex items-center gap-2 px-9 py-4 rounded-full border-2 border-[#fb923c] text-[#0d6e41] font-black text-[15px] bg-transparent hover:bg-[#fb923c] hover:text-white transition-all duration-300 cursor-pointer"
-                    >
-                        Request for Quote <span className="text-[#fb923c] group-hover:text-white transition-colors duration-300 text-lg">›</span>
-                    </a>
+                    </motion.p>
                 </div>
 
-                <div className="w-full lg:w-2/5 flex justify-center lg:justify-end items-center overflow-visible">
+                <motion.div 
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="w-full lg:w-2/5 flex justify-center lg:justify-end items-center overflow-visible"
+                >
                     <img
                         src={globeImg}
                         alt="Globe held by hand"
                         className="w-[300px] md:w-[420px] lg:w-[520px] h-auto object-contain"
                     />
-                </div>
+                </motion.div>
             </div>
 
-            <div className="w-full pb-14 overflow-hidden bg-[#f6f3e5]">
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="w-full pb-14 overflow-hidden bg-[#f6f3e5] mt-10 lg:mt-0"
+            >
                 <p
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                     className="text-center text-[14px] md:text-[15px] font-medium text-gray-400 tracking-widest uppercase mb-6"
@@ -97,7 +114,7 @@ const TrustedBrands = () => {
                         ))}
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
         </section>
     );

@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Quote, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const testimonials = [
     {
@@ -58,19 +59,31 @@ const Testimonials: FC = () => {
     const scrollItems = [...testimonials, ...testimonials];
 
     return (
-        <section className="w-full   overflow-hidden bg-white">
-            <div className=" mx-auto bg-[#0d6e41]  py-16 md:py-24 relative overflow-hidden">
+        <section className="w-full overflow-hidden bg-white">
+            <div className="mx-auto bg-[#0d6e41] py-16 md:py-24 relative overflow-hidden">
 
-                <div className="text-center mb-16 px-4">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16 px-4"
+                >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                         className="text-white text-[32px] md:text-[54px] lg:text-[60px] font-black leading-tight max-w-2xl mx-auto tracking-tighter"
                     >
                         Satisfied Customers <br className="hidden md:block" /> Are Our Best Ads
                     </h2>
-                </div>
+                </motion.div>
 
-                <div className="relative flex overflow-hidden group">
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                    className="relative flex overflow-hidden group"
+                >
                     <div className="flex gap-8 animate-scroll hover:[animation-play-state:paused] whitespace-nowrap" style={{ willChange: 'transform' }}>
                         {scrollItems.map((item, index) => (
                             <div
@@ -116,7 +129,7 @@ const Testimonials: FC = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] bg-white opacity-5 rounded-full pointer-events-none" />
                 <div className="absolute top-20 -left-20 w-[200px] h-[200px] bg-white opacity-5 rounded-full pointer-events-none" />

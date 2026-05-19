@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import burgerBoxMain from '../../assets/gallery/burgerBoxMain.webp';
 import bowlMain from '../../assets/gallery/bowlMain.webp';
 import foodBoxMain from '../../assets/gallery/foodBoxMain.webp';
@@ -17,9 +18,19 @@ const BrandFreshLook = ({ setFormOpen }: BrandFreshLookProps) => {
 
     return (
         <section className="w-full bg-[#f6f3e5] overflow-hidden">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-0 w-full">
+            <motion.div 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.8, staggerChildren: 0.2 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-0 w-full"
+            >
                 {images.map((img, idx) => (
-                    <div
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: idx * 0.1 }}
                         key={idx}
                         className="h-[180px] sm:h-[240px] md:h-[280px] lg:h-[320px] w-full overflow-hidden border-b border-gray-100"
                     >
@@ -28,12 +39,16 @@ const BrandFreshLook = ({ setFormOpen }: BrandFreshLookProps) => {
                             alt={img.alt}
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-in-out cursor-pointer"
                         />
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
 
             <div className="max-w-6xl mx-auto py-20 px-6 flex flex-col items-center text-center">
-                <h2
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                     className="text-[34px] sm:text-[44px] md:text-[54px] lg:text-[60px] font-black leading-tight text-[#1a2b4b] mb-8 tracking-tight"
                 >
@@ -54,16 +69,26 @@ const BrandFreshLook = ({ setFormOpen }: BrandFreshLookProps) => {
                             />
                         </svg>
                     </span>
-                </h2>
+                </motion.h2>
 
-                <p
+                <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
                     style={{ fontFamily: "'Montserrat', sans-serif" }}
                     className="text-gray-500 text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed font-semibold max-w-3xl mb-12"
                 >
                     Contact our team today for a personalized consultation and let's craft custom packaging that refreshes and revitalizes your food brand!
-                </p>
+                </motion.p>
 
-                <div className="flex justify-center">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex justify-center"
+                >
                     <button
                         onClick={() => setFormOpen(true)}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -71,7 +96,7 @@ const BrandFreshLook = ({ setFormOpen }: BrandFreshLookProps) => {
                     >
                         Customized My Packaging <span className="text-[#fb923c] group-hover:text-white transition-colors duration-300 text-lg">›</span>
                     </button>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

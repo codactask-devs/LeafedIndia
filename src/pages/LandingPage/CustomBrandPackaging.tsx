@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import bowlIcon from '../../assets/NavBar/bowl.webp';
 import paperCupIcon from '../../assets/NavBar/paper-cup.webp';
 import foodBoxIcon from '../../assets/NavBar/food-box.webp';
@@ -43,11 +44,32 @@ const CustomBrandPackaging = ({ setFormOpen }: CustomBrandPackagingProps) => {
         }
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
-        <section className="w-full bg-[#fcfbfa] py-20 px-4 md:px-10">
+        <section className="w-full bg-[#fcfbfa] py-20 px-4 md:px-10 overflow-hidden">
             <div className="max-w-6xl mx-auto flex flex-col items-center">
 
-                <div className="text-center mb-16 max-w-3xl">
+                <motion.div 
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.7 }}
+                    className="text-center mb-16 max-w-3xl"
+                >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                         className="text-[32px] md:text-[44px] lg:text-[48px] font-black leading-tight text-[#0d6e41] mb-6"
@@ -61,11 +83,18 @@ const CustomBrandPackaging = ({ setFormOpen }: CustomBrandPackagingProps) => {
                     >
                         From takeaway boxes to cup holders, find food-safe, eco-friendly custom packaging designed to keep your products fresh and your brand unforgettable.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-12">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mb-12"
+                >
                     {products.map((product, index) => (
-                        <div
+                        <motion.div
+                            variants={itemVariants}
                             key={index}
                             className="bg-white border-2 border-gray-100 rounded-[32px] p-8 flex flex-col items-center justify-between min-h-[340px] hover:border-[#86bc25] hover:shadow-lg transition-all duration-300 group"
                         >
@@ -82,11 +111,17 @@ const CustomBrandPackaging = ({ setFormOpen }: CustomBrandPackagingProps) => {
                             >
                                 {product.name}
                             </span>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
-                <div className="flex justify-center mt-4">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="flex justify-center mt-4"
+                >
                     <button
                         onClick={() => setFormOpen(true)}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -94,7 +129,7 @@ const CustomBrandPackaging = ({ setFormOpen }: CustomBrandPackagingProps) => {
                     >
                         Request For Sample <span className="text-[#fb923c] group-hover:text-white transition-colors duration-300 text-lg">›</span>
                     </button>
-                </div>
+                </motion.div>
 
             </div>
         </section>

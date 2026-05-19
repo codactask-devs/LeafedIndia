@@ -1,13 +1,20 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const DifferenceSection = () => {
     const [playing, setPlaying] = useState(false);
 
     return (
-        <section className="w-full bg-white">
+        <section className="w-full bg-white overflow-hidden">
             <div className="flex flex-col lg:flex-row">
 
-                <div className="w-full lg:w-1/2 relative aspect-video bg-black">
+                <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                    className="w-full lg:w-1/2 relative aspect-video bg-black"
+                >
                     {!playing ? (
                         <>
                             <iframe
@@ -37,39 +44,58 @@ const DifferenceSection = () => {
                             title="LeafedIndia Video"
                         />
                     )}
-                </div>
+                </motion.div>
 
                 <div className="w-full lg:w-1/2 flex items-center px-6 md:px-16 py-12 lg:py-0 bg-white">
                     <div className="max-w-lg">
-                        <h2
+                        <motion.h2
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
                             style={{ fontFamily: "'Montserrat', sans-serif" }}
                             className="text-[36px] md:text-[44px] lg:text-[50px] font-black leading-[1.1] mb-6"
                         >
                             <span className="text-[#0d6e41] block">The LeafedIndia</span>
                             <span className="text-[#fb923c] block">Difference</span>
-                        </h2>
+                        </motion.h2>
 
-                        <p
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
                             style={{ fontFamily: "'Montserrat', sans-serif" }}
                             className="text-gray-500 text-[15px] leading-relaxed mb-4"
                         >
                             At LeafedIndia, we merge innovation with sustainability to create food packaging solutions that tell your story.
-                        </p>
+                        </motion.p>
 
-                        <p
+                        <motion.p
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
                             style={{ fontFamily: "'Montserrat', sans-serif" }}
                             className="text-gray-500 text-[15px] leading-relaxed mb-10"
                         >
                             With our in-house manufacturing expertise and commitment to environmentally friendly practices, we're uniquely positioned to bring your vision to life.
-                        </p>
+                        </motion.p>
 
-                        <a
-                            href="/about"
-                            style={{ fontFamily: "'Montserrat', sans-serif" }}
-                            className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-[#fb923c] text-[#0d6e41] font-black text-[15px] bg-transparent hover:bg-[#fb923c] hover:text-white transition-all duration-300 cursor-pointer"
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
                         >
-                            Know more about us <span className="text-[#fb923c] group-hover:text-white transition-colors duration-300 text-lg">›</span>
-                        </a>
+                            <a
+                                href="/about"
+                                style={{ fontFamily: "'Montserrat', sans-serif" }}
+                                className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-[#fb923c] text-[#0d6e41] font-black text-[15px] bg-transparent hover:bg-[#fb923c] hover:text-white transition-all duration-300 cursor-pointer"
+                            >
+                                Know more about us <span className="text-[#fb923c] group-hover:text-white transition-colors duration-300 text-lg">›</span>
+                            </a>
+                        </motion.div>
                     </div>
                 </div>
 

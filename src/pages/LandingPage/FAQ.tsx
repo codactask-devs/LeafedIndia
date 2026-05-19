@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const QnA = ({ qna }: { qna: { question: string; answer: string } }) => {
     const [open, setOpen] = useState(false);
@@ -61,24 +62,53 @@ const FAQ = () => {
         },
     ];
 
-    return (
-        <section className="w-full bg-[#f6f3e5] py-20 ">
-            <div id="faq" className="   items-center  border bg-white border-gray-200  px-6 md:px-16 flex flex-col w-full mx-auto gap-5 py-12 relative shadow-sm">
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    };
 
-                <div className="text-center mb-10">
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
+    };
+
+    return (
+        <section className="w-full bg-[#f6f3e5] py-20 overflow-hidden">
+            <div id="faq" className="items-center border bg-white border-gray-200 px-6 md:px-16 flex flex-col w-full mx-auto gap-5 py-12 relative shadow-sm">
+
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-10"
+                >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                         className="font-black text-[32px] md:text-[44px] leading-[1.2] text-[#0d6e41]"
                     >
                         Frequently Asked Questions <span className='text-[#fb923c]'> (FAQ) </span>
                     </h2>
-                </div>
+                </motion.div>
 
-                <div className="w-[80%]">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="w-full sm:w-[80%] lg:w-[60%]"
+                >
                     {questionsAndAnswers.map((qna) => (
-                        <QnA key={qna.question} qna={qna} />
+                        <motion.div variants={itemVariants} key={qna.question}>
+                            <QnA qna={qna} />
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
