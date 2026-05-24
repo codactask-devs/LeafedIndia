@@ -1,10 +1,16 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import footprintIcon from '../../assets/ffodabox-reduce-footprint.webp';
 import ecoIcon from '../../assets/foodabox-eco-friendl.webp';
 import uniqueIcon from '../../assets/foodabox-unique-product.webp';
 import { Quote } from 'lucide-react';
+import { useCountUp } from '../../animations/useCountUp';
 
 const PackagingSuccess = () => {
+    const [count1, ref1] = useCountUp({ end: 60, duration: 2800, easing: 'easeOut' });
+    const [count2, ref2] = useCountUp({ end: 25, duration: 2600, easing: 'easeOut' });
+    const [count3, ref3] = useCountUp({ end: 45, duration: 2700, easing: 'easeOut' });
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -33,14 +39,14 @@ const PackagingSuccess = () => {
                 >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-[32px] md:text-[48px] lg:text-[58px] font-black leading-[1.1] text-[#0d6e41] mb-4"
+                        className="text-[32px] md:text-[52px] lg:text-[52px] font-black leading-[1.1] text-[#0d6e41] mb-4"
                     >
                         Our Custom  <br />
                         <span className='text-[#fb923c]'>Packaging Success </span>
                     </h2>
                     <p
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-gray-500 text-[15px] md:text-[16px] leading-relaxed font-semibold max-w-2xl"
+                        className="text-gray-500 text-[14px] md:text-[18px] leading-relaxed font-semibold max-w-2xl"
                     >
                         A greener, more eco-friendly packaging solution that delivers results.
                     </p>
@@ -58,10 +64,11 @@ const PackagingSuccess = () => {
                     <motion.div variants={itemVariants} className="bg-[#fcfbfa]/60 backdrop-blur-sm border border-gray-200/50 rounded-[32px] p-8 flex flex-col justify-between min-h-[380px] shadow-sm hover:shadow-md transition-all duration-300">
                         <div>
                             <span
+                                ref={ref1 as React.RefObject<HTMLSpanElement>}
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}
                                 className="text-[54px] md:text-[64px] font-black text-[#86bc25] leading-none block mb-4"
                             >
-                                60%
+                                {count1}%
                             </span>
                             <p
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -79,10 +86,11 @@ const PackagingSuccess = () => {
                     <motion.div variants={itemVariants} className="bg-[#fcfbfa]/60 backdrop-blur-sm border border-gray-200/50 rounded-[32px] p-8 flex flex-col justify-between min-h-[380px] shadow-sm hover:shadow-md transition-all duration-300">
                         <div>
                             <span
+                                ref={ref2 as React.RefObject<HTMLSpanElement>}
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}
                                 className="text-[54px] md:text-[64px] font-black text-[#86bc25] leading-none block mb-4"
                             >
-                                25%
+                                {count2}%
                             </span>
                             <p
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -100,10 +108,11 @@ const PackagingSuccess = () => {
                     <motion.div variants={itemVariants} className="bg-[#fcfbfa]/60 backdrop-blur-sm border border-gray-200/50 rounded-[32px] p-8 flex flex-col justify-between min-h-[380px] shadow-sm hover:shadow-md transition-all duration-300">
                         <div>
                             <span
+                                ref={ref3 as React.RefObject<HTMLSpanElement>}
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}
                                 className="text-[54px] md:text-[64px] font-black text-[#86bc25] leading-none block mb-4"
                             >
-                                45%
+                                {count3}%
                             </span>
                             <p
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}

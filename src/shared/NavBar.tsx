@@ -36,7 +36,7 @@ const NavBar = ({ setFormOpen }: NavBarProps) => {
                         </Link>
                     </div>
 
-                    <div style={{ fontFamily: "Montserrat" }} className="hidden lg:flex flex-1 justify-between pl-20 items-center gap-[2%] font-semibold text-[#333]">
+                    <div style={{ fontFamily: "Montserrat" }} className="hidden lg:flex flex-1 justify-between pl-20 items-center gap-[2%] font-semibold text-[#333] lg:text-[18px]">
                         <Link to="/" onClick={() => setIsProductsOpen(false)} className="text-[#0a5d3c] hover:text-[#fb923c] transition-colors">Home</Link>
                         <Link to="/#about" onClick={() => setIsProductsOpen(false)} className="text-[#0a5d3c] hover:text-[#fb923c] transition-colors">About Us</Link>
 
@@ -170,7 +170,7 @@ const NavBar = ({ setFormOpen }: NavBarProps) => {
                     <div className="w-1/4 flex justify-end">
                         <Link to="/studio">
                             <button
-                                className="hidden lg:block group text-[14px] px-10  py-3  md:text-[16px]  text-center
+                                className="hidden lg:block group text-[14px] px-10  py-3  lg:text-[18px]  text-center
                     text-white font-medium 
                     border border-transparent
                     hover:border-[#0d6e41]

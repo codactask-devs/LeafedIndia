@@ -62,14 +62,14 @@ const BentoGallery = ({ setFormOpen }: BentoGalleryProps) => {
 
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-14 px-4">
                         <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                            <h2 style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-[32px] md:text-[48px] lg:text-[58px] font-black leading-[1.1]">
+                            <h2 style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-[32px] md:text-[52px] lg:text-[52px] font-black leading-[1.1]">
                                 <span className="text-[#0d6e41] block">Be Inspired by</span>
                                 <span className="text-[#fb923c] block md:ml-16">Trendy Creations</span>
                             </h2>
                         </div>
                         <div className={`transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
                             <div className="w-10 h-1 bg-[#fb923c] mb-3" />
-                            <p style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-gray-500 font-semibold text-sm max-w-[240px] leading-relaxed">
+                            <p style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-gray-500 font-semibold text-[14px] md:text-[18px] max-w-[240px] leading-relaxed">
                                 Crafted for quality, designed for the planet. Browse our curated selection of premium sustainable packaging.
                             </p>
                         </div>

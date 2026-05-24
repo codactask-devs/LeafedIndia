@@ -1,0 +1,113 @@
+@import url("./../utils/FontTheme.css");
+
+/* ── Left Icon Sidebar — white background ─────────────────────────────────── */
+.left-sidebar {
+  width: 80px;
+  background: #ffffff;
+  border-right: 1px solid #e4e4ee;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  z-index: 100;
+  flex-shrink: 0;
+  gap: 4px;
+  box-shadow: 1px 0 8px rgba(0, 0, 0, 0.04);
+  width: 200px;
+
+}
+
+.left-sidebar-item {
+  width: 100%;
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: #9898b0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  font-size: 22px;
+}
+
+.left-sidebar-item svg {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.left-sidebar-item span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.left-sidebar-item:hover {
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+
+.left-sidebar-item:hover svg {
+  transform: scale(1.1);
+}
+
+.left-sidebar-item.active {
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+
+/* Purple left indicator */
+.left-sidebar-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  background: #7c3aed;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Mobile Bottom Nav ────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .left-sidebar {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid #e4e4ee;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-shrink: 0;
+    gap: 0;
+  }
+
+  .left-sidebar-item {
+    flex: 1;
+    height: 100%;
+    padding: 8px 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left-sidebar-item span {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+
+  .left-sidebar-item.active::after {
+    top: 0;
+    left: 15%;
+    right: 15%;
+    bottom: auto;
+    width: auto;
+    height: 3px;
+    border-radius: 0 0 4px 4px;
+  }
+}

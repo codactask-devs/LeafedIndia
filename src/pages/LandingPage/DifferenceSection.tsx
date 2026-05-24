@@ -54,7 +54,7 @@ const DifferenceSection = () => {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8 }}
                             style={{ fontFamily: "'Montserrat', sans-serif" }}
-                            className="text-[32px] md:text-[48px] lg:text-[58px] font-black leading-[1.1] mb-6"
+                            className="text-[32px] md:text-[52px] lg:text-[52px] font-black leading-[1.1] mb-6"
                         >
                             <span className="text-[#0d6e41] block">The LeafedIndia</span>
                             <span className="text-[#fb923c] block">Difference</span>
@@ -66,7 +66,7 @@ const DifferenceSection = () => {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             style={{ fontFamily: "'Montserrat', sans-serif" }}
-                            className="text-gray-500 text-[15px] leading-relaxed mb-4"
+                            className="text-gray-500 text-[14px] md:text-[18px] leading-relaxed mb-4 font-semibold"
                         >
                             At LeafedIndia, we merge innovation with sustainability to create food packaging solutions that tell your story.
                         </motion.p>
@@ -77,7 +77,7 @@ const DifferenceSection = () => {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                             style={{ fontFamily: "'Montserrat', sans-serif" }}
-                            className="text-gray-500 text-[15px] leading-relaxed mb-10"
+                            className="text-gray-500 text-[14px] md:text-[18px] leading-relaxed mb-10 font-semibold"
                         >
                             With our in-house manufacturing expertise and commitment to environmentally friendly practices, we're uniquely positioned to bring your vision to life.
                         </motion.p>
@@ -91,7 +91,7 @@ const DifferenceSection = () => {
                             <a
                                 href="/about"
                                 style={{ fontFamily: "'Montserrat', sans-serif" }}
-                                className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-[#fb923c] text-[#0d6e41] font-black text-[15px] bg-transparent hover:bg-[#fb923c] hover:text-white transition-all duration-300 cursor-pointer"
+                                className="group inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-[#fb923c] text-[#0d6e41] font-black text-[15px] md:text-[18px] bg-transparent hover:bg-[#fb923c] hover:text-white transition-all duration-300 cursor-pointer"
                             >
                                 Know more about us <span className="text-[#fb923c] group-hover:text-white transition-colors duration-300 text-lg">›</span>
                             </a>

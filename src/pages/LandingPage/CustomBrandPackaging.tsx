@@ -72,14 +72,14 @@ const CustomBrandPackaging = ({ setFormOpen }: CustomBrandPackagingProps) => {
                 >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-[32px] md:text-[48px] lg:text-[58px] font-black leading-[1.1] text-[#0d6e41] mb-6"
+                        className="text-[32px] md:text-[52px] lg:text-[52px] font-black leading-[1.1] text-[#0d6e41] mb-6"
                     >
                         Your Brand. Your Box. <br />
                         <span className='text-[#fb923c]'> Your Way</span>
                     </h2>
                     <p
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-gray-500 text-[15px] md:text-[16px] leading-relaxed font-semibold"
+                        className="text-gray-500 text-[14px] md:text-[18px] leading-relaxed font-semibold"
                     >
                         From takeaway boxes to cup holders, find food-safe, eco-friendly custom packaging designed to keep your products fresh and your brand unforgettable.
                     </p>
@@ -125,7 +125,7 @@ const CustomBrandPackaging = ({ setFormOpen }: CustomBrandPackagingProps) => {
                     <button
                         onClick={() => setFormOpen(true)}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="group inline-flex items-center gap-2 px-9 py-4 rounded-full border-2 border-[#fb923c] text-[#0d6e41] font-black text-[15px] bg-transparent hover:bg-[#fb923c] hover:text-white transition-all duration-300 cursor-pointer shadow-sm"
+                        className="group inline-flex items-center gap-2 px-9 py-4 rounded-full border-2 border-[#fb923c] text-[#0d6e41] font-black text-[15px] md:text-[18px] bg-transparent hover:bg-[#fb923c] hover:text-white transition-all duration-300 cursor-pointer shadow-sm"
                     >
                         Request For Sample <span className="text-[#fb923c] group-hover:text-white transition-colors duration-300 text-lg">›</span>
                     </button>

@@ -37,7 +37,7 @@ const TrustedBrands = () => {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.8 }}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-[32px] md:text-[48px] lg:text-[58px] font-black text-[#0d6e41] leading-[1.1] mb-6"
+                        className="text-[32px] md:text-[52px] lg:text-[52px] font-black text-[#0d6e41] leading-[1.1] mb-6"
                     >
                         Trusted by Brands<br />
                         Who <span className="text-[#fb923c]">Love the Planet</span>
@@ -59,7 +59,7 @@ const TrustedBrands = () => {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-gray-500 text-[16px] md:text-[17px] leading-relaxed max-w-[520px] mb-10"
+                        className="text-gray-500 text-[14px] md:text-[18px] leading-relaxed max-w-[520px] mb-10 font-semibold"
                     >
                         Dedicated to preserving the environment, our sustainable food packaging solutions not only protect your products but also the planet. Learn more about our eco-friendly practices.
                     </motion.p>

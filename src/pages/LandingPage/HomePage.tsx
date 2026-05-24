@@ -1,7 +1,8 @@
 import NavBar from '../../shared/NavBar';
 import HeroImage from '../../assets/HeroImage.webp';
 import CircularText from '../../animations/CircularFont';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useCountUp } from '../../animations/useCountUp';
 import directFactory from '../../assets/hero/foodabox-direct-manufacturer.webp';
 import ecoFriendly from '../../assets/hero/foodabox-environmentally-friendly.webp';
 import customizable from '../../assets/hero/foodabox-fully-customizable.webp';
@@ -16,11 +17,13 @@ import PackagingSuccess from './PackagingSuccess';
 import CustomBrandPackaging from './CustomBrandPackaging';
 import popupImg from '../../assets/popup.jpg';
 import BrandFreshLook from './BrandFreshLook';
-import RotatingQuotes from './RotatingQuotes';
+// import RotatingQuotes from './RotatingQuotes';
 
 const HomePage = () => {
     const [formOpen, setFormOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
+    const [heroCount50, heroRef50] = useCountUp({ end: 50, duration: 1500, easing: 'easeOut' });
+    const [heroCount100, heroRef100] = useCountUp({ end: 100, duration: 1600, easing: 'easeOut' });
 
     useEffect(() => {
         setIsVisible(true);
@@ -59,15 +62,15 @@ const HomePage = () => {
                             <nav className="w-full lg:w-1/2 lg:pt-10 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
                                 <h1
                                     style={{ fontFamily: "'Montserrat', sans-serif" }}
-                                    className={`text-[34px] md:text-[80px] lg:text-[80px] font-black leading-10 md:leading-20 mb-8 tracking-tight transition-all duration-1000 delay-150 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
+                                    className={`text-[34px] md:text-[90px] lg:text-[90px] font-black leading-10 md:leading-[95px] mb-8 tracking-tight transition-all duration-1000 delay-150 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}
                                 >
                                     <span className="text-[#0d6e41] block whitespace-nowrap">Make The Best</span>
-                                    <span className="text-[#fb923c] block text-[40px] md:text-[86px] lg:text-[89px]">Packaging</span>
+                                    <span className="text-[#fb923c] block text-[40px] md:text-[90px] lg:text-[90px]">Packaging</span>
                                 </h1>
 
                                 <p
                                     style={{ fontFamily: "'Montserrat', sans-serif" }}
-                                    className={`text-gray-500 text-lg md:text-[16px] max-w-[600px] leading-relaxed font-medium mb-10 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
+                                    className={`text-gray-500 text-[14px] md:text-[18px] max-w-[600px] leading-relaxed font-medium mb-10 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}
                                 >
                                     Food-grade, compostable paper packaging — engineered for performance, designed for your brand, manufactured at scale in India.
                                 </p>
@@ -78,7 +81,7 @@ const HomePage = () => {
                                         <a
                                             href="#collections"
                                             style={{ fontFamily: "'Montserrat', sans-serif" }}
-                                            className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#fb923c] text-white font-bold text-[14px] hover:bg-[#e8832b] transition-all duration-300 cursor-pointer shadow-md hover:shadow-lg"
+                                            className="inline-flex items-center gap-2 px-7 py-3 md:px-9 md:py-4 rounded-full bg-[#fb923c] text-white font-bold text-[14px] md:text-[18px] hover:bg-[#e8832b] transition-all duration-300 cursor-pointer shadow-md hover:shadow-lg"
                                         >
                                             ● Learn More
                                         </a>
@@ -91,12 +94,20 @@ const HomePage = () => {
 
                                 <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-10 mb-5 transition-all duration-1000 delay-700 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}">
                                     <div className="flex flex-col">
-                                        <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-[#1a2b4b] font-black text-[18px] md:text-[22px]">50K+</span>
+                                        <span
+                                            ref={heroRef50 as React.RefObject<HTMLSpanElement>}
+                                            style={{ fontFamily: "'Montserrat', sans-serif" }}
+                                            className="text-[#1a2b4b] font-black text-[18px] md:text-[22px]"
+                                        >{heroCount50}K+</span>
                                         <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-gray-400 font-medium text-[12px] mt-0.5">Units Shipped</span>
                                     </div>
                                     <div className="w-px bg-gray-200" />
                                     <div className="flex flex-col">
-                                        <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-[#1a2b4b] font-black text-[18px] md:text-[22px]">100%</span>
+                                        <span
+                                            ref={heroRef100 as React.RefObject<HTMLSpanElement>}
+                                            style={{ fontFamily: "'Montserrat', sans-serif" }}
+                                            className="text-[#1a2b4b] font-black text-[18px] md:text-[22px]"
+                                        >{heroCount100}%</span>
                                         <span style={{ fontFamily: "'Montserrat', sans-serif" }} className="text-gray-400 font-medium text-[12px] mt-0.5">Compostable</span>
                                     </div>
                                     <div className="w-px bg-gray-200" />
@@ -156,7 +167,7 @@ const HomePage = () => {
             <PackagingSuccess />
             <FAQ />
             <BrandFreshLook setFormOpen={setFormOpen} />
-            <RotatingQuotes />
+            {/* <RotatingQuotes /> */}
 
             {formOpen && (
                 <div

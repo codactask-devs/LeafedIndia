@@ -90,7 +90,7 @@ const FAQ = () => {
                 >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="font-black text-[32px] md:text-[48px] lg:text-[58px] leading-[1.1] text-[#0d6e41]"
+                        className="font-black text-[32px] md:text-[52px] lg:text-[52px] leading-[1.1] text-[#0d6e41]"
                     >
                         Frequently Asked Questions <span className='text-[#fb923c]'> (FAQ) </span>
                     </h2>

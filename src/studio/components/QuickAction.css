@@ -1,0 +1,132 @@
+@import url("./../utils/FontTheme.css");
+
+.quick-action-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 26, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 10002;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.quick-action-panel {
+  width: 600px;
+  padding: 32px;
+  font-family: inherit;
+  animation: fadeInScale 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #ffffff;
+  border: 1px solid #e4e4ee;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+  border-radius: 28px;
+  position: relative;
+  max-width: 95vw;
+}
+
+.quick-action-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.quick-action-subtitle {
+  margin: 0 0 24px 0;
+  font-size: 15px;
+  color: #6b6b80;
+}
+
+.quick-action-templates {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.quick-action-templates::-webkit-scrollbar { width: 6px; }
+.quick-action-templates::-webkit-scrollbar-thumb {
+  background: #e4e4ee;
+  border-radius: 6px;
+}
+
+.quick-action-close {
+  position: absolute;
+  top: 22px; right: 22px;
+  background: #f4f4f8;
+  border: 1.5px solid #e4e4ee;
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  color: #3a3a50;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quick-action-close:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fecaca;
+}
+
+.quick-action-thumbnail-box {
+  width: 100%; aspect-ratio: 1;
+  background: #f4f4f8;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; margin-bottom: 4px;
+}
+
+.quick-action-thumbnail {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.quick-action-item:hover .quick-action-thumbnail {
+  transform: scale(1.1);
+}
+
+.quick-action-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-between;
+  padding: 12px;
+  background: #ffffff;
+  border: 1.5px solid #e4e4ee;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #3a3a50;
+}
+
+.quick-action-item:hover {
+  border-color: #9898b0;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  background: #f4f4f8;
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .quick-action-panel {
+    width: 90%; max-width: 380px;
+    padding: 24px 20px; border-radius: 28px;
+  }
+
+  .quick-action-templates {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px; padding: 10px;
+    max-height: 45vh; overflow-y: auto;
+  }
+
+  .quick-action-item { gap: 8px; padding: 10px; }
+  .quick-action-item svg { width: 20px; height: 20px; }
+  .template-name { font-size: 11px; }
+}

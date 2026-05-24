@@ -71,7 +71,7 @@ const Testimonials: FC = () => {
                 >
                     <h2
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
-                        className="text-white text-[32px] md:text-[48px] lg:text-[58px] font-black leading-[1.1] max-w-2xl mx-auto tracking-tighter"
+                        className="text-white text-[32px] md:text-[52px] lg:text-[52px] font-black leading-[1.1] max-w-2xl mx-auto tracking-tighter"
                     >
                         Satisfied Customers <br className="hidden md:block" /> Are Our Best Ads
                     </h2>
