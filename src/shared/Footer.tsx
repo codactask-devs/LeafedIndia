@@ -54,7 +54,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col ml-5 gap-6">
+                    <div className="flex flex-col gap-6">
                         <h3 className="text-xl font-bold">Contact</h3>
                         <ul className="flex flex-col gap-4 text-gray-400 font-medium">
                             <li className="font-medium text-gray-400 hover:text-white transition-all">Tamil Nadu, India</li>
