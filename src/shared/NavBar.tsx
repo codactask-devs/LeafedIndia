@@ -291,15 +291,15 @@ const NavBar = ({ setFormOpen }: NavBarProps) => {
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="block w-full py-5 text-center text-lg font-medium text-[#1a2b4b] border-b border-gray-100"
                         >
-                            Blog
+                            Contact
                         </Link>
 
                         <Link
-                            to="/#footer"
+                            to="/studio"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="block w-full py-5 text-center text-lg font-medium text-[#1a2b4b] border-b border-gray-100"
                         >
-                            Contact
+                            Craft Your Packaging
                         </Link>
 
                     </div>
